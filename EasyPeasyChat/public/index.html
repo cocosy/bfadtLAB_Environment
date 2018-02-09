@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+  <title> Emoticon Chatroom </title>
+
+  <style>
+
+	input {
+    display: inline;
+	}
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+<body style="background-color: black;
+		font-family: 'VT323', 'Courier', monospace;
+		margin:100px;
+		font-size: 20px;">
+
+
+<!--
+	Username input. 
+	Submitting name executes setClientName function,
+	emitting the 'setClientName' message to the server over sockets.
+-->
+
+
+<div style="font-size: 35px;
+			text-align: center;
+			color: white;
+">
+
+<form action="javascript:setClientName();"  id="alias" >
+	<h4 style="font-size: 70px; font-weight: normal;">Emoticon Chatroom</h4>
+	<p> Please enter your username.</p>
+
+	<br>
+	Username: 
+	<input type="text" name="Nickname" pattern=".{1,}" required title="1 character minimum" placeholder="( ͡° ͜ʖ ͡°)" style="font-size: 30px;
+	font-family: 'VT323', 'Courier', monospace;">
+	<br>
+	<input type="submit" value="Submit" style="
+	height:20px; 
+	color:white;
+	background-color:blue;
+	margin-top: 100px;">
+</form>
+ </div>
+
+
+<!-- Chatroom          -->
+
+
+<div id="chatroom" style="
+			height: 500px;
+			width: 80%;
+			display: none; 	
+			background-color: #D3D3D3;
+			margin: 20px;
+			position: relative;
+			
+			"  >
+	<div style="padding:10px; height: 400px; overflow-y: scroll" id=chatbox>You have entered the chatroom</div>
+	<div style=" width:100%;  position:absolute; bottom:0;
+	/*position:absolute; float:left;*/
+	"> 
+		<form action="javascript:clientMessage();" id="inputMessage">
+			<input style="
+				margin: 10px;
+                bottom: 0; 
+                width: 85%; 
+                font-size:20px;
+                padding:5px;
+                font-family: 'VT323', 'Courier', monospace;" 
+                type="text" name="messageContent" pattern=".{1,}" required title="1 character minimum" placeholder="Start typing..." min="1">
+           	<input type="submit" value="Submit" 
+           	style="
+           	height:20px; 
+			color:white;
+			background-color:blue;
+			">
+
+		</form>
+
+	<!-- 	<div style="min-width: 15%;
+		height: 500px;
+		/*position: absolute;
+		float: right;*/
+		background-color: red;">
+
+		</div> -->
+	</div>
+</div>
+
+<!-- Username input                -->
+
+
+
+<script src = "/socket.io/socket.io.js"></script>
+<script src = "/main.js"></script>
+
+
+
+</body>
+</html>
