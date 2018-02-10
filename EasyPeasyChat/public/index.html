@@ -42,7 +42,7 @@
 			<p> Please enter your username.</p>
 
 			<br> Username:
-			<input type="text" class="js-test" name="Nickname" pattern=".{1,}" required title="1 character minimum" placeholder="( ͡° ͜ʖ ͡°)" style="font-size: 30px;
+			<input type="text" class="js-test" name="Nickname" pattern=".{1,}" required title="1 character minimum" placeholder="e.g.( ͡° ͜ʖ ͡°)" style="font-size: 30px;   background-color: blue;color:white;
 	font-family: 'VT323', 'Courier', monospace;">
 			<br>
 			<input type="submit" value="Submit" placeholder="submit" style="
@@ -62,44 +62,64 @@
 
 	<div id="chatroom" style="
 			display: none;
-			background-color:white;
-			margin: 20px;
+			background-color:black;
+			margin: 10px;
 			position: relative;
 			">
+			<h4 style="font-size: 50px; 
+			margin-bottom: 20px; 
+			margin-right:none; 
+			text-align: left; 
+			font-weight: normal; 
+			color:white">Emoticon Chatroom</h4>
 		<div style="display: inline-block;
-				background-color: yellow;
-			width: 60%;
-			padding:10px; height: 500px; overflow-y: scroll" id=chatbox>You have entered the chatroom</div>
-		<div style=" width:60%;  position:absolute; float:left; bottom:0;
+				border:3px solid blue;
+				background-color: white;
+				width: 60%;
+				min-width: 200px;
+				padding: 10px 10px 45px 10px;
+				height: 465px; overflow-y: scroll" id=chatbox>You have entered the chatroom</div>
+
+
+		<div style=" width: 60%;  position:absolute; float:left; bottom:15px;
 	/*position:absolute; float:left;*/
 	">
-			<form action="javascript:clientMessage();" id="inputMessage">
+			<form action="javascript:clientMessage();" id="inputMessage" style="width:100%; ">
 				<input style="
-				margin: 10px;
+				margin-left: 10px;
                 bottom: 0; 
-                width: 85%; 
+                width:85%; 
                 font-size:20px;
-                padding:5px;
+                border:2px solid blue;
+              /*  padding:5px;*/
                 font-family: 'VT323', 'Courier', monospace;" class="js-test" type="text" name="messageContent" pattern=".{1,}" required title="1 character minimum" placeholder="Start typing..." min="1">
 				<input type="submit" value="Submit" style="
-           	height:30px; 
-	font-family: 'VT323', 'Courier', monospace;
-	color:white;
-	background-color:black;
-	font-size: 20px;
+           		height:30px; 
+				font-family: 'VT323', 'Courier', monospace;
+				color:white;
+				margin-left: 10px;
+				margin-top:10px;
+            	bottom: 0;  
+				background-color:blue;
+				font-size: 20px;
 			">
 
 			</form>
 		</div>
 		<div style="
-		width: 30%;
+		min-width: 200px;
+		width:30%;
 		overflow: scroll;
-		float:right;
+		display: inline-block;
 		height: 500px;
-		padding:10px;
+		padding: 10px;
+		border: 3px solid blue;
+
+
 		/*position: absolute;
 		float: right;*/
-		background-color: red;">
+		background-color: white;">
+		<
 
 		</div>
 	</div>
