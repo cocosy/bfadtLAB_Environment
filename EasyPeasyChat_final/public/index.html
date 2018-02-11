@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+	<title>⋆★⋆★⋆ WELCOME TO EMOTICON CHATROOM! ⋆★⋆★⋆</title>
+
+	<style>
+		input {
+			display: inline;
+			}
+
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+
+<body style="background-color: black;
+		font-family: 'VT323', 'Courier', monospace;
+		margin:100px;
+		font-size: 20px;">
+
+
+	<!--
+	Username input. 
+	Submitting name executes setClientName function,
+	emitting the 'setClientName' message to the server over sockets.
+-->
+
+
+	<div style="font-size: 35px;
+			text-align: center;
+			color: white;
+">
+
+		<form action="javascript:setClientName();" id="alias">
+			<h4 style="font-size: 70px; font-weight: normal;">Emoticon Chatroom</h4>
+				<style>
+		p {
+			color: red;
+    		animation-name: example;
+    		animation-duration: 4s;
+    		animation-iteration-count: infinite;
+		}
+		@keyframes example {
+    		0%   {color: salmon;}
+    		20%  {color: gold;}
+    		40%  {color: aquamarine;}
+    		60% {color: lightgreen;}
+    		80% {color: deepskyblue;}
+    		100% {color: plum;}
+		}
+
+	</style>
+			<p> Please enter your username.</p>
+
+			<br> Username:
+			<input type="text" class="js-test" name="Nickname" pattern=".{1,}" required title="1 character minimum" placeholder="e.g.( ͡° ͜ʖ ͡°)" style="font-size: 30px;   background-color: blue;　color:white;
+	font-family: 'VT323', 'Courier', monospace;">
+			<br>
+			<input type="submit" value="Submit" placeholder="submit" style="
+	height:30px; 
+ 	font-family: 'VT323', 'Courier', monospace;
+	color:white;
+	background-color:black;
+	font-size: 20px;
+	margin-top: 100px;">
+		</form>
+	</div>
+
+
+	<!-- Chatroom          -->
+
+
+	<div id="chatroom" style="
+			display: none;
+			background-color:black;
+			margin: 10px;
+			position: relative;
+			">
+			<h4 style="font-size: 50px; 
+			margin-bottom: 20px; 
+			margin-right:none; 
+			text-align: left; 
+			font-weight: normal; 
+			color:white">Emoticon Chatroom</h4>
+		<div style="display: inline-block;
+				border:3px solid blue;
+				background-color: white;
+				width: 60%;
+				min-width: 200px;
+				padding: 10px 10px 45px 10px;
+				height: 465px; overflow-y: scroll" id=chatbox>You have entered the chatroom</div>
+
+
+		<div style=" width: 60%;  position:absolute; float:left; bottom:15px;
+	/*position:absolute; float:left;*/
+	">
+			<form action="javascript:clientMessage();" id="inputMessage" style="width:100%; ">
+				<input style="
+				margin-left: 10px;
+                bottom: 0; 
+                width:85%; 
+                font-size:20px;
+                border:2px solid blue;
+              /*  padding:5px;*/
+                font-family: 'VT323', 'Courier', monospace;" class="js-test" type="text" name="messageContent" pattern=".{1,}" required title="1 character minimum" placeholder="Start typing..." min="1">
+				<input type="submit" value="Submit" style="
+           		height:30px; 
+				font-family: 'VT323', 'Courier', monospace;
+				color:white;
+				margin-left: 10px;
+				margin-top:10px;
+            	bottom: 0;  
+				background-color:blue;
+				font-size: 20px;
+			">
+
+			</form>
+		</div>
+		<div style="
+		min-width: 200px;
+		width:30%;
+		overflow: scroll;
+		display: inline-block;
+		height: 500px;
+		padding: 10px;
+		border: 3px solid blue;
+
+
+		/*position: absolute;
+		float: right;*/
+		background-color: white;">
+		<
+
+		⋆★⋆EMOTICON DICTIONARY⋆★⋆<br>
+		TYPE () WITH WORDS INSIDE<br>
+		<br>
+		acid = ⊂(◉‿◉)つ<br>
+		afraid = (ㆆ _ ㆆ)<br>
+		angel = ☜(⌒▽⌒)☞<br>
+		angelu = 👼<br>
+		angry = •`_´•<br>
+		arrowhead = ⤜(ⱺ ʖ̯ⱺ)⤏<br>
+		apple = <br>
+		awkward = '•͡˘㇁•͡˘<br>
+		bat = /|\\ ^._.^ /|\\<br>
+		batu = 🦇<br>
+		bear/koala = ʕ·͡ᴥ·ʔ﻿<br>
+		bearu = 🐻<br>
+		bearflip = ʕノ•ᴥ•ʔノ ︵ ┻━┻<br>
+		bearhug = ʕっ•ᴥ•ʔっ<br>
+		because/since = ∵<br>
+		bigheart = ❤<br>
+		blackeye = 0__#<br>
+		blubby = (      0    _   0    )<br>
+		blush = (˵ ͡° ͜ʖ ͡°˵)<br>
+		bond/007 = ┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/’̿’̿ ̿<br>
+		bomb = 💣<br>
+		bored = (-_-)<br>
+		bribe = ( •͡˘ _•͡˘)ノð<br>
+		broccoli = 🥦<br>
+		bubbles = ( ˘ ³˘)ノ°ﾟº❍｡<br>
+		butterfly = ƸӜƷ<br>
+		cake = 🍰<br>
+		cat = (= ФェФ=)<br>
+		catu = 🐱<br>
+		catlenny = ( ͡° ᴥ ͡°)﻿<br>
+		cheers = 🥂<br>
+		check = ✓<br>
+		chick = 🐥<br>
+		chubby = ╭(ʘ̆~◞౪◟~ʘ̆)╮<br>
+		claro = (͡ ° ͜ʖ ͡ °)<br>
+		cloud = ☁️<br>
+		club = ♣<br>
+		coffee/cuppa = c[_]<br>
+		coffeeu = ☕<br>
+		cmd/command = ⌘<br>
+		cool = (•_•) ( •_•)>⌐■-■ (⌐■_■)<br>
+		copy/c = ©<br>
+		creep = ԅ(≖‿≖ԅ)<br>
+		creepcute = ƪ(ړײ)‎ƪ​​<br>
+		crim3s = ( ✜︵✜ )<br>
+		cross = †<br>
+		cry = (╥﹏╥)<br>
+		cryu = 😭<br>
+		crywave = ( ╥﹏╥) ノシ<br>
+		cute = (｡◕‿‿◕｡)<br>
+		d1-6 = ⚀, ⚁, ⚂, ⚃, ⚄, ⚅<br>
+		damnyou = (ᕗ ͠° ਊ ͠° )ᕗ<br>
+		dance = ᕕ(⌐■_■)ᕗ ♪♬<br>
+		dead = x⸑x<br>
+		dealwithit/dwi = (⌐■_■)<br>
+		delta = Δ<br>
+		depressed = (︶︹︶)<br>
+		derp = ☉ ‿ ⚆<br>
+		diamond = ♦<br>
+		dog = (◕ᴥ◕ʋ)<br>
+		dogu = 🐶<br>
+		dollar = $<br>
+		dontcare = ╭∩╮（︶︿︶）╭∩╮<br>
+		do not want/dontwant = ヽ(｀Д´)ﾉ<br>
+		dope = <(^_^)><br>
+		<< = «<br>
+		>> = »<br>
+		doubletableflip = ┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻<br>
+		down = ↓<br>
+		downu = ⬇️<br>
+		duckface = (・3・)<br>
+		duel = ᕕ(╭ರ╭ ͟ʖ╮•́)⊃¤=(————-<br>
+		duh = (≧︿≦)<br>
+		dunno = ¯\\(°_o)/¯<br>
+		emptystar = ☆<br>
+		emptytriangle = △<br>
+		endure = (҂◡_◡) ᕤ<br>
+		envelope/letter = ✉︎<br>
+		epsilon = ɛ<br>
+		euro = €<br>
+		evil = ψ(｀∇´)ψ<br>
+		evilu = 😈<br>
+		evillenny = (͠≖ ͜ʖ͠≖)<br>
+		facebook = (╯°□°)╯︵ ʞooqǝɔɐɟ<br>
+		facepalm = (－‸ლ)<br>
+		fancytext = вєωαяє, ι αм ƒαη¢у!<br>
+		fart = (ˆ⺫ˆ๑)<3<br>
+		fight = (ง •̀_•́)ง<br>
+		finn = | (• ◡•)|<br>
+		fish = <"(((<3<br>
+		fishu = 🐠<br>
+		fishcake = 🍥<br>
+		fire = 🔥<br>
+		flexing = ᕙ(`▽´)ᕗ<br>
+		fliptext = ǝןqɐʇ ɐ ǝʞıן ǝɯ dıןɟ<br>
+		flipped/heavytable = ┬─┬﻿ ︵ /(.□. \\）<br>
+		flower = (✿◠‿◠)<br>
+		f = ✿<br>
+		floweru = 🌸<br>
+		fly = ─=≡Σ((( つ◕ل͜◕)つ<br>
+		friendflip = (╯°□°)╯︵ ┻━┻ ︵ ╯(°□° ╯)<br>
+		frown = (ღ˘⌣˘ღ)<br>
+		fuckoff/fo = ୧༼ಠ益ಠ╭∩╮༽<br>
+		fuckyou/fu = ┌П┐(ಠ_ಠ)<br>
+		game = 👾<br>
+		ghast = = _ =<br>
+		ghost = ༼ つ ❍_❍ ༽つ<br>
+		ghostu = 👻<br>
+		gift/present = (´・ω・)っ由<br>
+		gimme = ༼ つ ◕_◕ ༽つ<br>
+		glitter = (*・‿・)ノ⌒*:･ﾟ✧<br>
+		glitteru = ✨<br>
+		glasses = (⌐ ͡■ ͜ʖ ͡■)<br>
+		glassesoff = ( ͡° ͜ʖ ͡°)ﾉ⌐■-■<br>
+		glitterderp = (ﾉ☉ヮ⚆)ﾉ ⌒*:･ﾟ✧<br>
+		gloomy = (_゜_゜_)<br>
+		goatse = (з๏ε)<br>
+		gotit = (☞ﾟ∀ﾟ)☞<br>
+		greet/greetings = ( ´◔ ω◔`) ノシ<br>
+		gun = ︻╦╤─<br>
+		hadouken = ༼つಠ益ಠ༽つ ─=≡ΣO))<br>
+		handleft/hl = ☜<br>
+		handleftu/hlu = 👈<br>
+		handright/hr = ☞<br>
+		handrightu/hru = 👉<br>
+		hamster = 🐹<br>
+		haha = ٩(^‿^)۶<br>
+		hahau = 😆<br>
+		happy = ٩( ๑╹ ꇴ╹)۶<br>
+		happygarry = ᕕ( ᐛ )ᕗ<br>
+		h/heart = ♥<br>
+		hu/heartu = 💗<br>
+		rh/redheart = ❤️<br>
+		gh/greenheart = 💚<br>
+		bh/blueheart = 💙<br>
+		yh/yellowheart = 💛<br>
+		oh/orangeheart = 🧡<br>
+		ph/purpleheart = 💜<br>
+		bh/blackheart = 🖤<br>
+		hello/ohai/bye = (ʘ‿ʘ)╯<br>
+		hellou/ohaiu/byeu/hittingu = 👋<br>
+		highfive = '._.)/\\(._.<br>
+		hitting = ( ｀皿´)｡ﾐ/<br>
+		hug/hugs = (づ｡◕‿‿◕｡)づ<br>
+		iknowright/ikr = ┐｜･ิω･ิ#｜┌<br>
+		illuminati = ୧(▲ᴗ▲)ノ<br>
+		infinity/inf = ∞<br>
+		inlove = (っ´ω`c)♡<br>
+		internet = ଘ(੭*ˊᵕˋ)੭* ̀ˋ ɪɴᴛᴇʀɴᴇᴛ<br>
+		interrobang = ‽<br>
+		jake = (❍ᴥ❍ʋ)<br>
+		kawaii = ≧◡≦<br>
+		keen = ┬┴┬┴┤Ɵ͆ل͜Ɵ͆ ༽ﾉ<br>
+		kiahh = ~\\(≧▽≦)/~<br>
+		kiss = (づ ￣ ³￣)づ<br>
+		kyubey = ／人◕ ‿‿ ◕人＼<br>
+		lambda = λ<br>
+		lazy = _(:3」∠)_<br>
+		left/<- = ←<br>
+		leftu/<-u = ⬅️<br>
+		lenny = ( ͡° ͜ʖ ͡°)<br>
+		lennybill = [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]<br>
+		lennyfight = (ง ͠° ͟ʖ ͡°)ง<br>
+		lennyflip = (ノ ͡° ͜ʖ ͡°ノ)   ︵ ( ͜。 ͡ʖ ͜。)<br>
+		lennygang = ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)<br>
+		lennyshrug = ¯\\_( ͡° ͜ʖ ͡°)_/¯<br>
+		lennysir = ( ಠ ͜ʖ ರೃ)<br>
+		lennystalker = ┬┴┬┴┤( ͡° ͜ʖ├┬┴┬┴<br>
+		lennystrong = ᕦ( ͡° ͜ʖ ͡°)ᕤ<br>
+		lennywizard = ╰( ͡° ͜ʖ ͡° )つ──☆*:・ﾟ<br>
+		light = 💡<br>
+		loading = ███▒▒▒▒▒▒▒<br>
+		lol = L(° O °L)<br>
+		look = (ಡ_ಡ)☞<br>
+		looku = 👀<br>
+		love = ♥‿♥<br>
+		lovebear = ʕ♥ᴥ♥ʔ<br>
+		lumpy = ꒰ ꒡⌓꒡꒱<br>
+		luv = -`ღ´-<br>
+		magic = ヽ(｀Д´)⊃━☆ﾟ. * ･ ｡ﾟ,<br>
+		magicflip = (/¯◡ ‿ ◡)/¯ ~ ┻━┻<br>
+		meep = \\(°^°)/<br>
+		meh = ಠ_ಠ<br>
+		mistyeyes = ಡ_ಡ<br>
+		monocle = ಠ_ರೃ<br>
+		monster = ༼ ༎ຶ ෴ ༎ຶ༽<br>
+		needle = ┌(◉ ͜ʖ◉)つ┣▇▇▇═──<br>
+		nice = ( ͡° ͜ °)<br>
+		no = →_←<br>
+		noclue = ／人◕ __ ◕人＼<br>
+		nom = (っˆڡˆς)<br>
+		note/sing = ♫<br>
+		nuclear/radioactive = ☢<br>
+		nyan = ~=[,,_,,]:3<br>
+		nyeh = @^@<br>
+		ohshit = ( º﹃º )<br>
+		omg = ◕_◕<br>
+		orly = (눈_눈)<br>
+		ohyou/ou = (◞థ౪థ)ᴖ<br>
+		peace/victory = ✌(-‿-)✌<br>
+		pi = π<br>
+		pig = 🐷<br>
+		piggy = 🐽<br>
+		pingpong = ( •_•)O*¯`·.¸.·´¯`°Q(•_• )<br>
+		pizza = 🍕<br>
+		plain = ._.<br>
+		pleased = (˶‾᷄ ⁻̫ ‾᷅˵)<br>
+		point = (☞ﾟヮﾟ)☞<br>
+		pooh = ʕ •́؈•̀)<br>
+		porcupine = (•ᴥ• )́`́\'́`́\'́⻍<br>
+		pound = £<br>
+		praise = (☝ ՞ਊ ՞)☝<br>
+		punch = O=(\'-\'Q)<br>
+		rabbit = 🐰<br>
+		rage/mad = t(ಠ益ಠt)<br>
+		rageflip = (ノಠ益ಠ)ノ彡┻━┻<br>
+		rainbowcat = (=^･ｪ･^=))ﾉ彡☆<br>
+		rainbowu = 🌈<br>
+		really = ò_ô<br>
+		r = ®<br>
+		right/-> = →<br>
+		rightu/->u = ➡️<br>
+		riot = ୧༼ಠ益ಠ༽୨<br>
+		rolldice = randomly shows dice number<br>
+		rolleyes = (◔_◔)<br>
+		rose = ✿ڿڰۣ—<br>
+		roseu = 🌹<br>
+		run = (╯°□°)╯<br>
+		sad = ε(´סּ︵סּ`)з<br>
+		saddonger = ヽ༼ຈʖ̯ຈ༽ﾉ<br>
+		sadlenny = ( ͡° ʖ̯ ͡°)<br>
+		shout = ╚(•⌂•)╝<br>
+		shrug = ¯\\_(ツ)_/¯<br>
+		shy = =^_^=<br>
+		sigma/sum = Σ<br>
+		skullu = ☠<br>
+		smile = ツ<br>
+		smileyu = 😊<br>
+		smirk = ¬‿¬<br>
+		snowmanu = ☃️<br>
+		sob = (;´༎ຶД༎ຶ`)<br>
+		spade = ♠<br>
+		squid = <コ:彡<br>
+		staru = 🌟<br>
+		strong = ᕙ(⇀‸↼‶)ᕗ<br>
+		sunu = 🌞<br>
+		surprised = (๑•́ ヮ •̀๑)<br>
+		surrender = \\_(-_-)_/<br>
+		gang/squad = ヽ༼ ຈل͜ຈ༼ ▀̿̿Ĺ̯̿̿▀̿ ̿༽Ɵ͆ل͜Ɵ͆ ༽ﾉ<br>
+		stalker = ┬┴┬┴┤(･_├┬┴┬┴<br>
+		swag = (̿▀̿‿ ̿▀̿ ̿)<br>
+		sword = o()xxxx[{::::::::::::::::::><br>
+		tabledown = ┬─┬﻿ ノ( ゜-゜ノ)<br>
+		tableflip = (ノ ゜Д゜)ノ ︵ ┻━┻<br>
+		tau = τ<br>
+		tears = (ಥ﹏ಥ)<br>
+		terrorist = ୧༼ಠ益ಠ༽︻╦╤─<br>
+		thanks/ty = \\(^-^)/<br>
+		therefore/so = ⸫<br>
+		tired = (=____=)<br>
+		toldyouso/toldyou = ☜(꒡⌓꒡)<br>
+		toogood = ᕦ(òᴥó)ᕥ<br>
+		tm = ™<br>
+		triangle/t = ▲<br>
+		unflip = ┬──┬ ノ(ò_óノ)<br>
+		unicorn = 🦄🌈<br>
+		up = ↑<br>
+		upu = ⬆️<br>
+		victory = (๑•̀ㅂ•́)ง✧<br>
+		wat = (ÒДÓױ)<br>
+		wave = ( * ^ *) ノシ<br>
+		waveu = 🌊<br>
+		whistle = (っ^з^)♪♬<br>
+		whoa = (°o•)<br>
+		why = ლ(`◉◞౪◟◉‵ლ)<br>
+		woo = ＼(＾O＾)／<br>
+		wtf = (⊙＿⊙\')<br>
+		wut = ⊙ω⊙<br>
+		yay = \\( ﾟヮﾟ)/<br>
+		yeah/yes = (•̀ᴗ•́)و ̑̑<br>
+		yen = ¥<br>
+		yinyang/yy = ☯<br>
+		yolo = Yᵒᵘ Oᶰˡʸ Lᶤᵛᵉ Oᶰᶜᵉ<br>
+		youkids/ukids = ლ༼>╭ ͟ʖ╮<༽ლ<br>
+		y u no/yuno(屮ﾟДﾟ)屮 Y U NO<br>
+		zen/meditation/omm = ⊹╰(⌣ʟ⌣)╯⊹<br>
+		zoidberg = (V) (°,,,,°) (V)<br>
+		zombie = [¬º-°]¬<br>
+		<br>
+		</div>
+	</div>
+
+	<!-- Username input                -->
+
+
+
+
+ <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+ <script src="/dist/asciimoji.js"></script>
+ <script src="/dist/jquery/asciimoji.jquery.js"></script>
+ <script src = "/socket.io/socket.io.js"></script>
+ <script src = "/main.js"></script>
+
+  <script>
+    $(function() {
+      $('.js-test').asciimoji();
+    });
+ </script>
+
+
+
+</body>
+
+</html>
