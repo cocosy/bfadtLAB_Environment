@@ -1,4 +1,4 @@
-    var api, api_grade, autho, backgroundRGB, key, num, word;
+    var api, api_grade, autho, backgroundRGB, key, num, word, img;
     //"https://kanjialive-api.p.mashape.com/api/public/search/advanced/?kanji=%E8%A6%AA"
     autho = "X-Mashape-Authorization";
     key = "vmV1yBNhyAmshNCUsFigRG26pHvAp1ua1o5jsnedTyVw5PYtXI";
@@ -61,9 +61,10 @@ var loadWord = function() {
                 console.log(data);
 
                 $("#quote-text").html(data.kanji.character);
-                $("#quote-author").html('&mdash;' + ' ' + data.radical.character); 
-                $("#kunyomi").html('"'+ data.kanji.kunyomi.romaji+ ' -- '+data.kanji.kunyomi.hiragana+'"');
-                $("#onyomi").html('"'+data.kanji.onyomi.romaji+ '  -- '+ data.kanji.onyomi.katakana+ '"');  
+                $("#quote-author").html('Radical character '+ '&mdash;' + ' ' + data.radical.character); 
+                $("#kunyomi").html('Kunyomi: "'+ data.kanji.kunyomi.romaji+ ' -- '+data.kanji.kunyomi.hiragana+'"');
+                $("#onyomi").html('Onyomi: "'+data.kanji.onyomi.romaji+ '  -- '+ data.kanji.onyomi.katakana+ '"');
+               // $("#onyomi").html('Onyomi: "'+data.kanji.onyomi.romaji+ '  -- '+ data.kanji.onyomi.katakana+ '"');  
 
                 // $('#tweet-quote').attr('href', 'https://twitter.com/intent/tweet?text=' + '"' + data[0].kanji.character + '"' + ' ' + ' ' + ' ' + ' \u2014' + ' ' + data[0].radical.character).attr('target', '_blank');
                 // $('#facebook-quote').attr('href', 'https://m.facebook.com/?hrc=1&refsrc=http%3A%2F%2Fh.facebook.com%2Fhr%2Fr&_rdr=' + '"' + data[0].kanji.character + '"' + ' ' + ' ' + ' ' + ' \u2014' + ' ' + data[0].radical.character).attr('target', '_blank');
@@ -92,11 +93,12 @@ var loadWord = function() {
         backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
        document.body.style.backgroundColor = backgroundRGB;
 
-       document.getElementById("quote-text").style.color = backgroundRGB;
-　
-       document.getElementById("quote-author").style.color = backgroundRGB;
+//        document.getElementById("quote-text").style.color = backgroundRGB;
+// 　
+//        document.getElementById("quote-author").style.color = backgroundRGB;
 
-       document.getElementById("new-quote").style.color = backgroundRGB;};
+//        document.getElementById("new-quote").style.color = backgroundRGB;
+     };
     
 
     
