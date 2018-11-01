@@ -2,42 +2,80 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> Random Movie Quote Machine </title>
+    	<title> 漢字の勉強 </title>
  
 
     
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<link rel="stylesheet" href="index.css" >
+		<link rel="stylesheet" href="index.css" >
 
 </head>
+<body>
+	<div style="background-color:red;
+            border: none;
+			text-align: center;
+			display: inline-block;
+			font-size: 20px;
+			padding: 0; 
+			margin: 3% 30%;
+			background: #ffb3b3;">
+			 <h2>
+	  	 		Learn Kanji in Grade: <input id = "input_id" placeholder="Pls input number <= 6" 
+	  	 							style="text-align: center;
+									display: inline-block;
+									font-size: 20px;"></input>
+	  								<br/>
+	  		</h2>
+ 	</div>
 
-    <div class="quote-box" id="quote-box">
-  <div class="quote-text" id="quote-text">
-    <i class="fa fa-quote-left"> </i><span id="quote-text"></span>
-  </div>
-  <div class="quote-author" id="quote-author">
-    - <span id="author"></span>
-  </div>
-  <div class="buttons" id="change-quote">
-    <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
-      <i class="fa fa-twitter" aria-hidden="true"></i></i>
-    </a>
-     <a class="button" id="facebook-quote" title="Post this quote on facebook!" target="_blank">
-      <i class="fa fa-facebook"></i>
-    </a>
-    <button class="button" id="new-quote">New quote</button>
-  </div>
-</div>
-<div class="footer"> by <a href="https://github.com/Teegold007">Teegoldz</a></div>
+  	<!-- <button class="buttons" id = "submit" >search</button>
+ -->
+
+  	<div class="quote-box" id="quote-box">
+  			<div class="quote-text" id="quote-text">
+   <!-- <i class="fa fa-quote-left"> </i><span id="quote-text"></span> -->
+  			</div>
+  			<div class="quote-author" id="quote-author">
+    		- <span id="author"></span>
+  			</div>
+
+  			<div class="quote-author" id="kunyomi">
+  			</div>
+  
+  			<div class="quote-author" id="onyomi">
+  			</div>
+
+  			<div class="buttons" id="change-quote">
+			<button class="button" id="new-quote" onclick="myFunction()" >Search</button>
+  			</div>
+
+  			<!-- <div class="buttons" id="change-quote">
+			<button class="button" id="new-quote" onclick="myFunction()" >Search</button>
+  			</div> -->
+
+  	</div>
 
 
+<!-- <h1>Adding 'a' and 'b'</h1>
 
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="add(document.getElementById('a').value,document.getElementById('b').value)">Add</button>
 
+<script>
+  function add(a,b) {
+    var sum = parseInt(a) + parseInt(b);
+    alert(sum);
+  }
+</script>
+ -->
 
 
  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
     <script src="index.js"></script>
+
 
 
 </body> 
