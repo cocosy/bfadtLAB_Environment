@@ -90,8 +90,9 @@ var loadWord = function() {
         x = Math.floor(Math.random() * 256);
         y = Math.floor(Math.random() * 256);
         z = Math.floor(Math.random() * 256);
-        backgroundRGB = "rgb(" + x + "," + y + "," + z + ")";
-       document.body.style.backgroundColor = backgroundRGB;
+        backgroundRGB = "rgb(" + x + "," + y + "," + z +")";
+       document.body.style.backgroundColor = backgroundRGB,10;
+       document.body.style.color = backgroundRGB;
 
 //        document.getElementById("quote-text").style.color = backgroundRGB;
 // 　
@@ -105,7 +106,7 @@ var loadWord = function() {
 
    
     var transition = function() {
-        document.getElementById("quote-box").style.transition = "all 2s";
+        document.getElementById("quote-box").style.transition = "all 10s";
     }
     $("#new-quote" || "#input_id").on("click", function() {
         loadWord();
